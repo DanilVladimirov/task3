@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+    <style>
+        body {
+            padding: 40px;
+            font-family: system-ui;
+        }
+
+        .status_bar {
+            height: 5px;
+            background-color: #cacaca;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .status_bar div {
+            background-color: #598eff;
+            height: 100%;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+        }
+
+        .top img {
+            width: 100px;
+            border-radius: 10px;
+        }
+        
+        .top .info {
+            margin-left: 20px;
+        }
+
+        .name {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .position {
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0051ff;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact a {
+            margin-left: 10px;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        h4 {
+            color: gray;
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        .block {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="pic.jpeg">
+        <div class="info">
+            <div class="name">Daniil Vladimirov</div>
+            <div class="position">Third-year student</div>
+        </div>
+    </div>
+
+<div style="display: flex;justify-content: space-between;">
+    <div>
+        <div>
+            <h1>Education</h1>
+            <div class="block">
+                <h3>
+                    JUNIOR SPECIALIST, CHERKASY POLYTECHNICAL COLLEGE,
+                    Ukraine/Cherkassy
+                </h3>
+                <h4>September 2017 — June 2021</h4>
+                Got experience with excel, word, access db, c++, java and economic science.
+            </div>
+
+            <div class="block">
+                <h3>
+                    BACHELOR SPECIALIST, CHERKASY STATE TECHNOLOGICAL UNIVERSITY,
+                    Ukraine/Cherkassy
+                </h3>
+                <h4>September 2021 — Present</h4>
+                Got experience with android development, python web development, postgresql.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1>Contacts</h1>
+            <div class="contact">
+                <span class="material-symbols-outlined">call</span>
+                <a href="tel:+380607080342">+380607080342</a>
+            </div>
+            <div class="contact">
+                <span class="material-symbols-outlined">mail</span>
+                <a href="mailto:danilvladimirov@gmail.com">danilvladimirov@gmail.com</a>
+            </div>
+        </div>
+        <div>
+            <h1>Skills</h1>
+            <div id="skills"></div>
+        </div>
+    </div>
+
+</div>
+    <script>
+        var skills = [
+            {"name": "English", "width": 40},
+            {"name": "Database", "width": 60},
+            {"name": "Python", "width": 80}
+        ];
+        var skills_html = "";
+        
+        skills.forEach(function (item, index) {
+            
+            skills_html += `
+            <div>
+                <div>${item.name}</div>
+                <div class="status_bar">
+                    <div style="width: ${item.width}%"></div>
+                </div>
+            </div>
+            `;
+
+
+        });
+
+        var skillsDiv = document.getElementById('skills');
+        skillsDiv.innerHTML = skills_html;
+
+    </script>
+
+</body>
+</html>
